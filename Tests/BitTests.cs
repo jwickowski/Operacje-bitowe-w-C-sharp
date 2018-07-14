@@ -41,6 +41,22 @@ namespace Tests
         }
 
         [Fact]
+        public void MoveBitsLeft()
+        {
+            byte a = BinaryToByte("00011000");
+            byte moved = (byte)(a << 2);
+            AssertBinary("01100000", moved);
+        }
+
+        [Fact]
+        public void MoveBitsRight()
+        {
+            byte a = BinaryToByte("00011000");
+            byte moved = (byte)(a >> 2);
+            AssertBinary("00000110", moved);
+        }
+
+        [Fact]
         public void TestAsserting()
         {
             AssertBinary("00001000", 8);
