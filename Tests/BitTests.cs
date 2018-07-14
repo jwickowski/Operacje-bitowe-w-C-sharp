@@ -12,6 +12,12 @@ namespace Tests
             AssertBinary("0", 0);
         }
 
+        [Fact]
+        public void TestParsing(){
+            Assert.Equal(7, BinaryToInt("111"));
+            Assert.Equal("111", IntToBinary(7));
+        }
+
         private void AssertBinary(string expectedBinary, int value){
             var binary = IntToBinary(value);
             Assert.Equal(expectedBinary, binary);
