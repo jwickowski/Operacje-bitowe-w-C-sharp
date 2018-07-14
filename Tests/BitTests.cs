@@ -27,7 +27,7 @@ namespace Tests
         {
             byte a = BinaryToByte("11111000");
             byte b = BinaryToByte("00011111");
-            byte result = (byte)(a | b);
+            byte result = (byte)(a & b);
             AssertBinary("00011000", result);
         }
 
