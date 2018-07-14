@@ -6,11 +6,20 @@ namespace Tests
     public class UnitTest1
     {
         [Fact]
-        public void BinaryAdd(){
+        public void BinaryAdd()
+        {
             byte firstOne = BinaryToByte("10000000");
             byte secondHalf = BinaryToByte("00001111");
             byte result = (byte)(firstOne | secondHalf);
             AssertBinary("10001111", result);
+        }
+
+        [Fact]
+        public void Negative()
+        {
+            byte number = BinaryToByte("11100000");
+            byte negative = (byte)~number;
+            AssertBinary("00011111", negative);
         }
 
         [Fact]
