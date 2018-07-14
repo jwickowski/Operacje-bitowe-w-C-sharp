@@ -13,8 +13,18 @@ namespace Tests
         }
 
         private void AssertBinary(string expectedBinary, int value){
-            string binary = Convert.ToString(value, 2);
+            var binary = IntToBinary(value);
             Assert.Equal(expectedBinary, binary);
+        }
+
+        private string IntToBinary(int value)
+        {
+            string binary = Convert.ToString(value, 2);
+            return binary;
+        }
+
+        private int BinaryToInt(string binnary){
+            return Convert.ToInt32(binnary, 2);
         }
     }
 }
