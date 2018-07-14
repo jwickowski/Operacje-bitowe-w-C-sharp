@@ -16,15 +16,15 @@ namespace Tests
         [Fact]
         public void TestParsing(){
             Assert.Equal(7, BinaryToByte("111"));
-            Assert.Equal("00000111", IntToBinary(7));
+            Assert.Equal("00000111", ByteToBinary(7));
         }
 
         private void AssertBinary(string expectedBinary, byte value){
-            var binary = IntToBinary(value);
+            var binary = ByteToBinary(value);
             Assert.Equal(expectedBinary, binary);
         }
 
-        private string IntToBinary(byte value)
+        private string ByteToBinary(byte value)
         {
             string binary = Convert.ToString(value, 2);
             var missingZeros = new string('0', 8 - binary.Length);
