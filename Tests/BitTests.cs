@@ -8,14 +8,15 @@ namespace Tests
         [Fact]
         public void TestAsserting()
         {
-            AssertBinary("1000", 8);
-            AssertBinary("0", 0);
+            AssertBinary("00001000", 8);
+            AssertBinary("00000000", 0);
+            AssertBinary("11111111", byte.MaxValue);
         }
 
         [Fact]
         public void TestParsing(){
             Assert.Equal(7, BinaryToByte("111"));
-            Assert.Equal("111", IntToBinary(7));
+            Assert.Equal("00000111", IntToBinary(7));
         }
 
         private void AssertBinary(string expectedBinary, byte value){
@@ -26,7 +27,8 @@ namespace Tests
         private string IntToBinary(byte value)
         {
             string binary = Convert.ToString(value, 2);
-            return binary;
+            var missingZeros = new string('0', 8 - binary.Length);
+            return missingZeros + binary;
         }
 
         private byte BinaryToByte(string binnary){
