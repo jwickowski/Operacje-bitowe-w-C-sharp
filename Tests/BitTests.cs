@@ -6,7 +6,7 @@ namespace Tests
     public class BitTests
     {
         [Fact]
-        public void BinaryAdd()
+        public void BinaryOr()
         {
             byte firstOne = BinaryToByte("10000000");
             byte secondHalf = BinaryToByte("00001111");
@@ -16,6 +16,14 @@ namespace Tests
 
         [Fact]
         public void Negative()
+        {
+            byte number = BinaryToByte("11100000");
+            byte negative = (byte)~number;
+            AssertBinary("00011111", negative);
+        }
+
+        [Fact]
+        public void BinaryRemove()
         {
             byte number = BinaryToByte("11100000");
             byte negative = (byte)~number;
