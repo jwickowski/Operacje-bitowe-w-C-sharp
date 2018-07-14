@@ -8,9 +8,9 @@ namespace Tests
         [Fact]
         public void BinaryOr()
         {
-            byte firstOne = BinaryToByte("10000000");
-            byte secondHalf = BinaryToByte("00001111");
-            byte result = (byte)(firstOne | secondHalf);
+            byte a = BinaryToByte("10000000");
+            byte b = BinaryToByte("00001111");
+            byte result = (byte)(a | b);
             AssertBinary("10001111", result);
         }
 
@@ -23,11 +23,12 @@ namespace Tests
         }
 
         [Fact]
-        public void BinaryRemove()
+        public void BinaryAnd()
         {
-            byte number = BinaryToByte("11100000");
-            byte negative = (byte)~number;
-            AssertBinary("00011111", negative);
+            byte a = BinaryToByte("11111000");
+            byte b = BinaryToByte("00011111");
+            byte result = (byte)(a | b);
+            AssertBinary("00011000", result);
         }
 
         [Fact]
