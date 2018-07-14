@@ -14,23 +14,23 @@ namespace Tests
 
         [Fact]
         public void TestParsing(){
-            Assert.Equal(7, BinaryToInt("111"));
+            Assert.Equal(7, BinaryToByte("111"));
             Assert.Equal("111", IntToBinary(7));
         }
 
-        private void AssertBinary(string expectedBinary, int value){
+        private void AssertBinary(string expectedBinary, byte value){
             var binary = IntToBinary(value);
             Assert.Equal(expectedBinary, binary);
         }
 
-        private string IntToBinary(int value)
+        private string IntToBinary(byte value)
         {
             string binary = Convert.ToString(value, 2);
             return binary;
         }
 
-        private int BinaryToInt(string binnary){
-            return Convert.ToInt32(binnary, 2);
+        private byte BinaryToByte(string binnary){
+            return Convert.ToByte(binnary, 2);
         }
     }
 }
