@@ -32,6 +32,15 @@ namespace Tests
         }
 
         [Fact]
+        public void BinaryXOR()
+        {
+            byte a = BinaryToByte("11110000");
+            byte b = BinaryToByte("00110011");
+            byte result = (byte)(a ^ b);
+            AssertBinary("11000011", result);
+        }
+
+        [Fact]
         public void TestAsserting()
         {
             AssertBinary("00001000", 8);
