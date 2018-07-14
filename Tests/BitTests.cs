@@ -9,6 +9,7 @@ namespace Tests
         public void TestBinaryParsing()
         {
             AssertBinary("1000", 8);
+            AssertBinary("0000", 0);
         }
 
         private void AssertBinary(string expectedBinary, int value){
